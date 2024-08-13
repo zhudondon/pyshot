@@ -33,10 +33,10 @@ cookieJson = {
 
 
 # time.sleep(2)
-
+browser = webdriver.Chrome(options=chrome_options)
 def goPlan(planId,planName):
     # 启动浏览器，获取网页源代码
-    browser = webdriver.Chrome(options=chrome_options)
+
     firstPage = 'https://eekao.workeredu.com/organization/records/queryExamRecordList.do?&formMap.RESOURCEID=6252b417a9fe879c01a758cb74b6a7b3&formMap.ROLEID=62a5172aa9fe879c01b67f741b40abd8'
     browser.get(firstPage)
     for key in cookieJson.keys():
@@ -125,7 +125,7 @@ planMap = {
     # "afe6a5eb4af941cf91c1d202a38772c0":"2023粤华物业管理员四级", ok
     # "d95e8ee79cc84aedaf0a7cd122febef3":"粤华物业管理员四级", ok
     # "7e28febc872342fa99f5379f76ab8513":"粤华物业管理员三级",ok
-    "537861ae143f49098ed04147833524fb":"粤华客户服务管理员客观题三级"
+    # "537861ae143f49098ed04147833524fb":"粤华客户服务管理员客观题三级"
 }
 
 for key in planMap:
