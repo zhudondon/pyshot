@@ -69,12 +69,15 @@ def goPlan(planId,planName):
     browser.execute_script("initBodyContext();")
 
     # , 'document.getElementById("current").value = 1; document.getElementById("pageCount").value = 200;'
-    element = WebDriverWait(browser, 2).until(
-        EC.presence_of_element_located((By.ID, "selPageCount"))
-    )
-    # browser.execute_script('	document.getElementById("current").value = 1; document.getElementById("pageCount").value = 100;loadpageno();')
-    #
-    element.find_element(by=By.XPATH, value="//option[@value='100']").click()
+    try:
+        element = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.ID, "selPageCount"))
+        )
+        # browser.execute_script('	document.getElementById("current").value = 1; document.getElementById("pageCount").value = 100;loadpageno();')
+        #
+        element.find_element(by=By.XPATH, value="//option[@value='200']").click()
+    except:
+        print("no page")
 
     time.sleep(2)
     # getExamRecordDetail('3728c391f3fb48d6910bdce0132b57ef')
@@ -111,15 +114,15 @@ def goPlan(planId,planName):
 
 
 planMap = {
-    "e2b1e08df6c240f79947050c219ce8ae":"粤华物业管理员四级(15-16日)",
+    # "e2b1e08df6c240f79947050c219ce8ae":"粤华物业管理员四级(15-16日)", ok
     # "bb998e0e14814f2bb2a95dee827107c6":"粤华物业管理员三级（15-16日）", ok
     # "30ebd4cce4a5461b88b95ff064bd48a0":"粤华客户服务管理员三级（15-16日）",ok
-    "07f4747bc134419b8ae22a9f9ec8cc42":"2023.05.19-05.20粤华物业管理员四级",
-    "009600afb6864cdab2869ea69c20b967":"2023粤华保洁员四级",
+    # "07f4747bc134419b8ae22a9f9ec8cc42":"2023.05.19-05.20粤华物业管理员四级",ok
+    # "009600afb6864cdab2869ea69c20b967":"2023粤华保洁员四级",ok
     # "96f853fa5ef0486e80e96aa9370f3868":"2023粤华保洁员五级", ok
     # "503250cbf1b14247ab8402de19414390":"2023粤华客户服务管理员三级", ok
     # "74609af4837943c58a62611760ea2ef8":"2023粤华物业管理员三级",ok
-    "afe6a5eb4af941cf91c1d202a38772c0":"2023粤华物业管理员四级",
+    # "afe6a5eb4af941cf91c1d202a38772c0":"2023粤华物业管理员四级", ok
     "d95e8ee79cc84aedaf0a7cd122febef3":"粤华物业管理员四级",
     "7e28febc872342fa99f5379f76ab8513":"粤华物业管理员三级",
     "537861ae143f49098ed04147833524fb":"粤华客户服务管理员客观题三级"
